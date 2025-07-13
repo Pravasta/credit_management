@@ -1,4 +1,4 @@
-package com.example.architecture_project
+package com.fitrayana.credit_management_project
 
 import io.flutter.embedding.android.FlutterActivity
 

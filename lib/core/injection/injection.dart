@@ -1,5 +1,5 @@
-import 'package:architecture_project/core/injection/env.dart';
-import 'package:architecture_project/main.dart';
+import 'package:flutter_credit_management/core/injection/env.dart';
+import 'package:flutter_credit_management/main.dart';
 
 class Injection {
   static const String fontFamily = 'Inter';

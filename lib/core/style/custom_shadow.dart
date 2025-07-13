@@ -1,4 +1,4 @@
-import 'package:architecture_project/core/theme/app_color.dart';
+import 'package:flutter_credit_management/core/theme/app_color.dart';
 import 'package:flutter/material.dart';
 
 List<BoxShadow> getCustomBoxShadow({

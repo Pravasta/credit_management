@@ -1,5 +1,5 @@
-import 'package:architecture_project/core/theme/app_color.dart';
-import 'package:architecture_project/main.dart';
+import 'package:flutter_credit_management/core/theme/app_color.dart';
+import 'package:flutter_credit_management/main.dart';
 import 'package:flutter/material.dart';
 
 class DefaultButton extends StatelessWidget {

@@ -1,10 +1,11 @@
 import 'package:another_flushbar/flushbar.dart';
-import 'package:architecture_project/core/theme/app_color.dart';
-import 'package:architecture_project/core/utils/assets.gen.dart';
-import 'package:architecture_project/main.dart';
+import 'package:flutter_credit_management/core/theme/app_color.dart';
+import 'package:flutter_credit_management/main.dart';
 import 'package:flutter/material.dart';
 
 import '../style/custom_shadow.dart';
+
+enum TypeSnackbar { danger, info, success }
 
 class AppBottomSnackbar {
   final BuildContext context;
@@ -13,8 +14,10 @@ class AppBottomSnackbar {
 
   void showCustomSnackbar(
     String title,
+
     String message1,
     String? imageAsset, {
+    required TypeSnackbar typeSnackbar,
     Color? iconBackgroundColor = Colors.red,
     bool? isBluetooth = false,
     String? message2,
@@ -60,7 +63,7 @@ class AppBottomSnackbar {
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: Image.asset(
-                    imageAsset ?? Assets.images.aGit,
+                    imageAsset!,
                     width: 28,
                     height: 28,
                     // colorFilter: ColorFilter.mode(

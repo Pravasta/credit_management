@@ -1,4 +1,4 @@
-# architecture_project
+# flutter_credit_management
 
 A new Flutter project.
 
