@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_credit_management/core/extensions/build_context_ext.dart';
 import 'package:flutter_credit_management/core/style/custom_shadow.dart';
+import 'package:flutter_credit_management/core/theme/app_color.dart';
 import 'package:flutter_credit_management/feature/dashboard/view/dashboard_view.dart';
 import 'package:flutter_credit_management/feature/history/view/history_view.dart';
 import 'package:flutter_credit_management/feature/verify/view/verify_view.dart';
@@ -44,21 +45,16 @@ class _MainViewState extends State<MainView> {
         children: [
           Image.asset(
             imageAsset,
-            width: 24,
-            height: 24,
-            color:
-                isActive
-                    ? appColorScheme(context).onPrimary
-                    : appColorScheme(context).onPrimary.withOpacity(0.5),
+            width: 26,
+            height: 26,
+            color: isActive ? AppColor.primary[500] : AppColor.secondary[500],
           ),
-          const SizedBox(height: 8),
+          SizedBox(height: 2),
           Text(
             title,
-            style: appTextTheme(context).bodySmall!.copyWith(
-              color:
-                  isActive
-                      ? appColorScheme(context).onPrimary
-                      : appColorScheme(context).onPrimary.withOpacity(0.5),
+            style: appTextTheme(context).bodyMedium!.copyWith(
+              color: isActive ? AppColor.primary[500] : AppColor.secondary[500],
+              height: 20 / 14,
             ),
           ),
         ],
@@ -67,45 +63,49 @@ class _MainViewState extends State<MainView> {
 
     Widget bottomNav() {
       return Positioned(
-        left: 24,
-        right: 24,
-        bottom: 24,
+        bottom: 0,
+        left: 0,
+        right: 0,
         child: Container(
           width: context.deviceWidth,
-          padding: const EdgeInsets.all(12.0),
+          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 13),
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(15.0),
-            boxShadow: getCustomBoxShadow(),
-            color: appColorScheme(context).primaryContainer,
+            boxShadow: getCustomBoxShadow(
+              blurRadius: [19.3],
+              offsets: [Offset(0, 4)],
+              spreadRadius: [0.0],
+              colors: [Color(0xff222C68).withOpacity(0.1)],
+            ),
+            color: appColorScheme(context).onPrimary,
           ),
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            spacing: 78,
             children:
                 [
-                  {'title': 'Dashboard', 'icon': Assets.icons.dashboard.path},
-                  {'title': 'History', 'icon': Assets.icons.history.path},
-                  {'title': 'Verify', 'icon': Assets.icons.verify.path},
+                  {'title': 'Home', 'icon': Assets.icons.home.path, 'index': 0},
+                  {
+                    'title': 'History',
+                    'icon': Assets.icons.history.path,
+                    'index': 1,
+                  },
+                  {
+                    'title': 'Verify',
+                    'icon': Assets.icons.verify.path,
+                    'index': 2,
+                  },
                 ].map((e) {
                   return Expanded(
                     child: InkWell(
                       onTap: () {
                         setState(() {
-                          _currentIndex = [
-                            'Dashboard',
-                            'History',
-                            'Verify',
-                          ].indexOf(e['title'] as String);
+                          _currentIndex = e['index'] as int;
                         });
                       },
                       child: titleBottomNav(
                         imageAsset: e['icon'] as String,
                         title: e['title'] as String,
-                        isActive:
-                            _currentIndex ==
-                            [
-                              'Dashboard',
-                              'History',
-                              'Verify',
-                            ].indexOf(e['title'] as String),
+                        isActive: _currentIndex == e['index'] as int,
                       ),
                     ),
                   );

@@ -32,7 +32,21 @@ class _SplashPageState extends State<SplashPage> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               SizedBox(),
-              Image.asset(Assets.icons.logo.path, width: 300, height: 300),
+              Column(
+                children: [
+                  Image.asset(
+                    Assets.icons.logo.path,
+                    width: 100,
+                    height: 100,
+                    fit: BoxFit.cover,
+                  ),
+                  SizedBox(height: 16),
+                  Text(
+                    'CrediChain',
+                    style: appTextTheme(context).headlineLarge,
+                  ),
+                ],
+              ),
               Column(
                 children: [
                   Text('Powered by', style: appTextTheme(context).labelLarge),

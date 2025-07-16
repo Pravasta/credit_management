@@ -49,10 +49,22 @@ class DefaultButton extends StatelessWidget {
                 children: [
                   Image.asset(iconUrl!, width: 20),
                   const SizedBox(width: 10),
-                  Text(title, style: appTextTheme(context).bodyMedium),
+                  Text(
+                    title,
+                    style: appTextTheme(context).bodyMedium!.copyWith(
+                      color: titleColor,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
                 ],
               )
-              : Text(title, style: appTextTheme(context).bodyMedium),
+              : Text(
+                title,
+                style: appTextTheme(context).bodyMedium!.copyWith(
+                  color: titleColor,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
     );
   }
 }

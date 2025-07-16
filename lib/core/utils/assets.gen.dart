@@ -29,17 +29,41 @@ class $AssetsIconsGen {
   /// File path: assets/icons/history.png
   AssetGenImage get history => const AssetGenImage('assets/icons/history.png');
 
+  /// File path: assets/icons/home.png
+  AssetGenImage get home => const AssetGenImage('assets/icons/home.png');
+
   /// File path: assets/icons/logo.png
   AssetGenImage get logo => const AssetGenImage('assets/icons/logo.png');
 
   /// File path: assets/icons/logo_bca.png
   AssetGenImage get logoBca => const AssetGenImage('assets/icons/logo_bca.png');
 
+  /// File path: assets/icons/mail.png
+  AssetGenImage get mail => const AssetGenImage('assets/icons/mail.png');
+
   /// File path: assets/icons/verify.png
   AssetGenImage get verify => const AssetGenImage('assets/icons/verify.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [dashboard, history, logo, logoBca, verify];
+  List<AssetGenImage> get values => [
+    dashboard,
+    history,
+    home,
+    logo,
+    logoBca,
+    mail,
+    verify,
+  ];
+}
+
+class $AssetsImagesGen {
+  const $AssetsImagesGen();
+
+  /// File path: assets/images/banner.png
+  AssetGenImage get banner => const AssetGenImage('assets/images/banner.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [banner];
 }
 
 class $AssetsLottieGen {
@@ -57,6 +81,7 @@ class Assets {
 
   static const $AssetsFontsGen fonts = $AssetsFontsGen();
   static const $AssetsIconsGen icons = $AssetsIconsGen();
+  static const $AssetsImagesGen images = $AssetsImagesGen();
   static const $AssetsLottieGen lottie = $AssetsLottieGen();
 }
 

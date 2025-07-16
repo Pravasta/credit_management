@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_credit_management/core/theme/app_color.dart';
+import 'package:flutter_credit_management/core/utils/assets.gen.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppTextStyle {
-  static const String defaultFontFamily = 'Poppins';
+  static final String defaultFontFamily = 'Poppins';
   // Light Text Theme
   static final TextTheme lightTextTheme = TextTheme(
     displayLarge: TextStyle(

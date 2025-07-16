@@ -1,4 +1,3 @@
-import 'package:flutter_credit_management/core/theme/app_color.dart';
 import 'package:flutter/material.dart';
 
 List<BoxShadow> getCustomBoxShadow({
@@ -28,7 +27,7 @@ List<BoxShadow> getCustomBoxShadow({
   for (int i = 0; i < length; i++) {
     boxShadows.add(
       BoxShadow(
-        color: colors?[i] ?? AppColor.black.withOpacity(0.1),
+        color: colors?[i] ?? Color(0xff222C68).withOpacity(0.1),
         offset: offsets?[i] ?? const Offset(0, 1),
         blurRadius: blurRadius?[i] ?? 1,
         spreadRadius: spreadRadius?[i] ?? 0.0,

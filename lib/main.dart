@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_credit_management/core/routes/navigation.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'core/injection/env.dart';
 import 'core/theme/app_theme.dart';
@@ -29,7 +30,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       showSemanticsDebugger: false,
-      title: 'Credit Management',
+      title: 'CrediChain',
       debugShowCheckedModeBanner: false,
       navigatorKey: navigatorKey,
       themeMode: ThemeMode.light,

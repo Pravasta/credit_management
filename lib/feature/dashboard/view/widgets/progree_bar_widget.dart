@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_credit_management/core/theme/app_color.dart';
 import 'package:flutter_credit_management/main.dart';
 
 class ProgreeBarWidget extends StatelessWidget {
@@ -17,19 +18,48 @@ class ProgreeBarWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomPaint(
       painter: _SemiCirclePainter(percent: percent, context: context),
-      size: const Size(250, 400),
-      child: Container(
-        padding: const EdgeInsets.all(16),
+      size: Size(300, 300),
+      child: SizedBox(
         width: 300,
-        height: 400,
+        height: 350,
         child: Center(
           child: Column(
-            mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(displayText, style: appTextTheme(context).headlineLarge),
-              const SizedBox(height: 16),
-              Text("credit score", style: appTextTheme(context).bodyMedium),
+              Text(
+                "CREDIT SCORE",
+                style: appTextTheme(
+                  context,
+                ).bodyMedium!.copyWith(color: Color(0xff02275A)),
+              ),
+              Text(
+                displayText,
+                style: TextStyle(
+                  fontSize: 38,
+                  fontFamily: 'Poppins',
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xff073c85),
+                ),
+              ),
+              Text(
+                'Good',
+                style: TextStyle(
+                  fontSize: 14,
+                  fontFamily: 'Poppins',
+                  fontWeight: FontWeight.w400,
+                  color: Color(0xff02275A),
+                ),
+              ),
+              SizedBox(height: 15),
+              Text(
+                'Last update 27 January 2025',
+                style: TextStyle(
+                  fontSize: 10,
+                  fontFamily: 'Poppins',
+                  fontWeight: FontWeight.w400,
+                  color: Color(0xff9299B5),
+                ),
+              ),
             ],
           ),
         ),
@@ -48,19 +78,19 @@ class _SemiCirclePainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     final Paint bgPaint =
         Paint()
-          ..color = appColorScheme(context).secondary
+          ..color = Color(0xffE8E8E8)
           ..strokeWidth = 22
           ..style = PaintingStyle.stroke
           ..strokeCap = StrokeCap.round;
 
     final Paint fgPaint =
         Paint()
-          ..color = appColorScheme(context).primary
+          ..color = AppColor.primary[500]!
           ..strokeWidth = 22
           ..style = PaintingStyle.stroke
           ..strokeCap = StrokeCap.round;
 
-    final center = Offset(size.width / 2, size.height / 2);
+    final center = Offset(size.width / 2, size.height / 1.8);
     final radius = size.width / 2;
 
     final total = Rect.fromCircle(center: center, radius: radius);
