@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_credit_management/core/components/app_button.dart';
+import 'package:flutter_credit_management/core/routes/navigation.dart';
 import 'package:flutter_credit_management/core/style/custom_shadow.dart';
 import 'package:flutter_credit_management/core/theme/app_color.dart';
 import 'package:flutter_credit_management/feature/dashboard/view/widgets/animated_progress_bar.dart';
+import 'package:flutter_credit_management/feature/dashboard/view/widgets/gradient_slider.dart';
 import 'package:flutter_credit_management/main.dart';
 
 import '../../../core/utils/assets.gen.dart';
+import 'collectability_detail_view.dart';
 
 class DashboardView extends StatefulWidget {
   const DashboardView({super.key});
@@ -15,6 +18,8 @@ class DashboardView extends StatefulWidget {
 }
 
 class _DashboardViewState extends State<DashboardView> {
+  int _selected = 0;
+
   @override
   Widget build(BuildContext context) {
     Widget appBar() {
@@ -78,6 +83,123 @@ class _DashboardViewState extends State<DashboardView> {
       );
     }
 
+    Widget activeLoanContent() {
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        spacing: 10,
+        children: [
+          Row(
+            children: [
+              Expanded(
+                child: Text(
+                  'Loan History',
+                  style: appTextTheme(
+                    context,
+                  ).bodySmall!.copyWith(fontWeight: FontWeight.w600),
+                ),
+              ),
+              Text(
+                'As of May 25, 2025',
+                style: appTextTheme(
+                  context,
+                ).bodySmall!.copyWith(color: Color(0xff9299B5)),
+              ),
+            ],
+          ),
+          Text(
+            'Loan Total',
+            style: appTextTheme(
+              context,
+            ).labelLarge!.copyWith(fontWeight: FontWeight.w600),
+          ),
+          Text(
+            'Rp 14.000.000',
+            style: appTextTheme(context).titleMedium!.copyWith(
+              fontWeight: FontWeight.w600,
+              color: Color(0xff3f455d),
+            ),
+          ),
+          Text(
+            'From 5 financials',
+            style: appTextTheme(
+              context,
+            ).bodySmall!.copyWith(color: Color(0xff9299B5)),
+          ),
+        ],
+      );
+    }
+
+    Widget collectibilityLoanContent() {
+      return Column(
+        spacing: 10,
+        children: [
+          Row(
+            children: [
+              Expanded(
+                child: Text(
+                  'Collectability Status',
+                  style: appTextTheme(
+                    context,
+                  ).bodySmall!.copyWith(fontWeight: FontWeight.w600),
+                ),
+              ),
+              Text(
+                'As of May 25, 2025',
+                style: appTextTheme(
+                  context,
+                ).bodySmall!.copyWith(color: Color(0xff9299B5)),
+              ),
+            ],
+          ),
+          Row(
+            children: [
+              Text(
+                'KOL 1',
+                style: appTextTheme(context).titleMedium!.copyWith(
+                  fontWeight: FontWeight.w600,
+                  color: Color(0xff3f455d),
+                ),
+              ),
+              SizedBox(width: 8),
+              Text(
+                '(Performing Loan)',
+                style: appTextTheme(
+                  context,
+                ).bodySmall!.copyWith(color: Color(0xff3f455d)),
+              ),
+            ],
+          ),
+          Column(
+            spacing: 4,
+            children: [
+              GradientSlider(),
+              Row(
+                children: [
+                  Expanded(
+                    child: Text(
+                      '800',
+                      style: appTextTheme(context).bodySmall!.copyWith(
+                        fontWeight: FontWeight.w600,
+                        color: Color(0xff9299B5),
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: 8),
+                  Text(
+                    '200',
+                    style: appTextTheme(context).bodySmall!.copyWith(
+                      fontWeight: FontWeight.w600,
+                      color: Color(0xff9299B5),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ],
+      );
+    }
+
     Widget loanSection() {
       return Container(
         margin: EdgeInsets.symmetric(horizontal: 21),
@@ -92,57 +214,77 @@ class _DashboardViewState extends State<DashboardView> {
           crossAxisAlignment: CrossAxisAlignment.start,
           spacing: 20,
           children: [
-            Text('Tempat Loan'),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              spacing: 10,
-              children: [
-                Row(
-                  children: [
-                    Expanded(
-                      child: Text(
-                        'Loan History',
-                        style: appTextTheme(
-                          context,
-                        ).bodySmall!.copyWith(fontWeight: FontWeight.w600),
-                      ),
-                    ),
-                    Text(
-                      'As of May 25, 2025',
-                      style: appTextTheme(
-                        context,
-                      ).bodySmall!.copyWith(color: Color(0xff9299B5)),
-                    ),
-                  ],
-                ),
-                Text(
-                  'Loan Total',
-                  style: appTextTheme(
-                    context,
-                  ).labelLarge!.copyWith(fontWeight: FontWeight.w600),
-                ),
-                Text(
-                  'Rp 14.000.000',
-                  style: appTextTheme(context).titleMedium!.copyWith(
-                    fontWeight: FontWeight.w600,
-                    color: Color(0xff3f455d),
-                  ),
-                ),
-                Text(
-                  'From 5 financials',
-                  style: appTextTheme(
-                    context,
-                  ).bodySmall!.copyWith(color: Color(0xff9299B5)),
-                ),
-                DefaultButton(
-                  title: 'See Details',
-                  onTap: () {},
-                  backgroundColor: AppColor.white,
-                  borderColor: AppColor.primary[500]!,
-                  titleColor: AppColor.primary[500]!,
-                  elevation: 0,
-                ),
-              ],
+            Container(
+              width: double.infinity,
+              padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+              decoration: BoxDecoration(
+                color: Color(0xfff4f4f4),
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Row(
+                spacing: 20,
+                children:
+                    [
+                      {'title': 'Active Loan', 'index': 0},
+                      {'title': 'Collectibility', 'index': 1},
+                    ].map((e) {
+                      final index = e['index'] as int;
+
+                      return Expanded(
+                        child: GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              _selected = index;
+                            });
+                          },
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color:
+                                  _selected == index
+                                      ? Color(0xff005BA4)
+                                      : Colors.transparent,
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 12,
+                              vertical: 8,
+                            ),
+                            child: Center(
+                              child: Text(
+                                e['title'] as String,
+                                style: appTextTheme(
+                                  context,
+                                ).bodySmall!.copyWith(
+                                  color:
+                                      _selected == index
+                                          ? AppColor.white
+                                          : Color(0xff555555),
+                                  fontSize: 12,
+                                  height: 1.5,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      );
+                    }).toList(),
+              ),
+            ),
+            if (_selected == 0) activeLoanContent(),
+            if (_selected == 1) collectibilityLoanContent(),
+            DefaultButton(
+              title: 'See Details',
+              onTap: () {
+                Navigation.push(
+                  CollectabilityDetailView(),
+                  CollectabilityDetailView.routeSettings,
+                );
+              },
+              backgroundColor: AppColor.white,
+              borderColor: AppColor.primary[500]!,
+              titleColor: AppColor.primary[500]!,
+              elevation: 0,
             ),
           ],
         ),

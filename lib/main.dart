@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_credit_management/core/routes/navigation.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'core/injection/env.dart';
 import 'core/theme/app_theme.dart';

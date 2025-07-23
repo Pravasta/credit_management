@@ -1,3 +1,4 @@
+import 'package:flutter_credit_management/feature/dashboard/view/collectability_detail_view.dart';
 import 'package:flutter_credit_management/feature/splash/view/splash_page.dart';
 import 'package:flutter_credit_management/main.dart';
 import 'package:flutter/material.dart';
@@ -32,6 +33,12 @@ class RoutesHandler {
       case RoutesName.main:
         return MaterialPageRoute(
           builder: (context) => const MainView(),
+          settings: settings,
+        );
+
+      case RoutesName.collectabilityView:
+        return MaterialPageRoute(
+          builder: (context) => const CollectabilityDetailView(),
           settings: settings,
         );
 

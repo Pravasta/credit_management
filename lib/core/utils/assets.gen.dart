@@ -22,6 +22,10 @@ class $AssetsFontsGen {
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
+  /// File path: assets/icons/credit_card.png
+  AssetGenImage get creditCard =>
+      const AssetGenImage('assets/icons/credit_card.png');
+
   /// File path: assets/icons/dashboard.png
   AssetGenImage get dashboard =>
       const AssetGenImage('assets/icons/dashboard.png');
@@ -32,6 +36,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/home.png
   AssetGenImage get home => const AssetGenImage('assets/icons/home.png');
 
+  /// File path: assets/icons/housing.png
+  AssetGenImage get housing => const AssetGenImage('assets/icons/housing.png');
+
   /// File path: assets/icons/logo.png
   AssetGenImage get logo => const AssetGenImage('assets/icons/logo.png');
 
@@ -41,17 +48,29 @@ class $AssetsIconsGen {
   /// File path: assets/icons/mail.png
   AssetGenImage get mail => const AssetGenImage('assets/icons/mail.png');
 
+  /// File path: assets/icons/paylater.png
+  AssetGenImage get paylater =>
+      const AssetGenImage('assets/icons/paylater.png');
+
+  /// File path: assets/icons/personal.png
+  AssetGenImage get personal =>
+      const AssetGenImage('assets/icons/personal.png');
+
   /// File path: assets/icons/verify.png
   AssetGenImage get verify => const AssetGenImage('assets/icons/verify.png');
 
   /// List of all assets
   List<AssetGenImage> get values => [
+    creditCard,
     dashboard,
     history,
     home,
+    housing,
     logo,
     logoBca,
     mail,
+    paylater,
+    personal,
     verify,
   ];
 }
