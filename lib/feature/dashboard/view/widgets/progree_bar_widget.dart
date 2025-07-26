@@ -30,7 +30,7 @@ class ProgreeBarWidget extends StatelessWidget {
                 "CREDIT SCORE",
                 style: appTextTheme(
                   context,
-                ).bodyMedium!.copyWith(color: Color(0xff02275A)),
+                ).bodyMedium!.copyWith(color: Color(0xffEF5A6F)),
               ),
               Text(
                 displayText,
@@ -38,7 +38,7 @@ class ProgreeBarWidget extends StatelessWidget {
                   fontSize: 38,
                   fontFamily: 'Poppins',
                   fontWeight: FontWeight.bold,
-                  color: Color(0xff073c85),
+                  color: Colors.black,
                 ),
               ),
               Text(
@@ -47,7 +47,7 @@ class ProgreeBarWidget extends StatelessWidget {
                   fontSize: 14,
                   fontFamily: 'Poppins',
                   fontWeight: FontWeight.w400,
-                  color: Color(0xff02275A),
+                  color: Color(0xffEF5A6F),
                 ),
               ),
               SizedBox(height: 15),

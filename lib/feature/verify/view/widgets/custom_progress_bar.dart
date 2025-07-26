@@ -62,7 +62,7 @@ class _CustomProgressBarState extends State<CustomProgressBar>
                   child: Container(
                     height: 12,
                     decoration: BoxDecoration(
-                      color: Color(0xcc005BA4),
+                      color: Color(0xffEF5A6F),
                       borderRadius: BorderRadius.circular(10),
                     ),
                   ),
@@ -72,10 +72,9 @@ class _CustomProgressBarState extends State<CustomProgressBar>
             const SizedBox(height: 8),
             Text(
               "${(_animation.value * 100).round()}%",
-              style: appTextTheme(context).bodySmall!.copyWith(
-                color: Color(0xcc005BA4),
-                fontWeight: FontWeight.w500,
-              ),
+              style: appTextTheme(
+                context,
+              ).bodySmall!.copyWith(fontWeight: FontWeight.w500),
             ),
           ],
         );

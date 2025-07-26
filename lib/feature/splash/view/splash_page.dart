@@ -34,17 +34,7 @@ class _SplashPageState extends State<SplashPage> {
               SizedBox(),
               Column(
                 children: [
-                  Image.asset(
-                    Assets.icons.logo.path,
-                    width: 100,
-                    height: 100,
-                    fit: BoxFit.cover,
-                  ),
-                  SizedBox(height: 16),
-                  Text(
-                    'CrediChain',
-                    style: appTextTheme(context).headlineLarge,
-                  ),
+                  Image.asset(Assets.icons.logo.path, width: 200, height: 200),
                 ],
               ),
               Column(

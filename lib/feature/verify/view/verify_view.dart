@@ -29,23 +29,9 @@ class _VerifyViewState extends State<VerifyView> {
       width: double.infinity,
       margin: EdgeInsets.fromLTRB(24, 20, 24, 0),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Image.asset(
-            Assets.icons.logo.path,
-            width: 32,
-            height: 32,
-            fit: BoxFit.cover,
-          ),
-          SizedBox(width: 13),
-          Expanded(
-            child: Text(
-              'CrediChain',
-              style: appTextTheme(context).bodyLarge!.copyWith(
-                fontWeight: FontWeight.w400,
-                color: Color(0xff02275A),
-              ),
-            ),
-          ),
+          Image.asset(Assets.icons.logo.path, width: 36, height: 36),
           Image.asset(
             Assets.icons.mail.path,
             width: 24,
@@ -71,7 +57,7 @@ class _VerifyViewState extends State<VerifyView> {
                 'Identify Verification',
                 style: appTextTheme(context).titleMedium!.copyWith(
                   fontWeight: FontWeight.w600,
-                  color: Color(0xff02275A),
+                  color: Color(0xffEF5A6F),
                 ),
               ),
               SizedBox(height: 30),
@@ -97,7 +83,7 @@ class _VerifyViewState extends State<VerifyView> {
                           'MM',
                           style: appTextTheme(context).titleLarge!.copyWith(
                             fontWeight: FontWeight.w600,
-                            color: Color(0xff02275A),
+                            color: Color(0xffEF5A6F),
                           ),
                         ),
                       ),
@@ -116,6 +102,9 @@ class _VerifyViewState extends State<VerifyView> {
                             return Row(
                               children: [
                                 Checkbox(
+                                  activeColor: Color(
+                                    0xffFF383C,
+                                  ).withOpacity(0.5),
                                   value: verification.contains(e),
                                   onChanged: (value) {
                                     setState(() {
@@ -133,7 +122,7 @@ class _VerifyViewState extends State<VerifyView> {
                                     context,
                                   ).bodyMedium!.copyWith(
                                     fontWeight: FontWeight.w500,
-                                    color: Color(0xff02275A),
+                                    color: Color(0xffEF5A6F),
                                   ),
                                 ),
                               ],
@@ -144,8 +133,8 @@ class _VerifyViewState extends State<VerifyView> {
                     DefaultButton(
                       title: 'Continue Verification',
                       onTap: () {},
-                      backgroundColor: Color(0xff005BA4),
-                      borderColor: Color(0xff005BA4),
+                      backgroundColor: Color(0xffEF5A6F),
+                      borderColor: Color(0xffEF5A6F),
                       titleColor: Colors.white,
                     ),
                   ],

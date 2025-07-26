@@ -40,14 +40,14 @@ class AppColor {
     900: Color(0xFF111827),
   });
 
-  static const MaterialColor primary = MaterialColor(0xff005BA4, <int, Color>{
-    // create color with 500 = 0xff005BA4
+  static const MaterialColor primary = MaterialColor(0xffEF5A6F, <int, Color>{
+    // create color with 500 = 0xffFF383C
     50: Color(0xFFF0F5FF),
     100: Color(0xFFD9E6FF),
     200: Color(0xFFB3CDFF),
     300: Color(0xFF8CB3FF),
     400: Color(0xFF6A9FFF),
-    500: Color(0xFF005BA4), // main color
+    500: Color(0xffEF5A6F), // main color
     600: Color(0xFF00508F),
     700: Color(0xFF00467A),
     800: Color(0xFF003B66),

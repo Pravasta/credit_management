@@ -48,7 +48,7 @@ class _HistoryViewState extends State<HistoryView> {
                   'Rp 10.500.000',
                   style: appTextTheme(context).headlineMedium!.copyWith(
                     fontWeight: FontWeight.w600,
-                    color: Color(0xff02275A),
+                    color: Color(0xffEF5A6F),
                   ),
                 ),
               ],
@@ -211,7 +211,7 @@ class _HistoryViewState extends State<HistoryView> {
                   'Rp 8.500.000',
                   style: appTextTheme(context).headlineMedium!.copyWith(
                     fontWeight: FontWeight.w600,
-                    color: Color(0xff02275A),
+                    color: Color(0xffEF5A6F),
                   ),
                 ),
               ],
@@ -353,7 +353,7 @@ class _HistoryViewState extends State<HistoryView> {
                   'Rp 15.500.000',
                   style: appTextTheme(context).headlineMedium!.copyWith(
                     fontWeight: FontWeight.w600,
-                    color: Color(0xff02275A),
+                    color: Color(0xffEF5A6F),
                   ),
                 ),
               ],
@@ -502,7 +502,7 @@ class _HistoryViewState extends State<HistoryView> {
                   'Rp 0',
                   style: appTextTheme(context).headlineMedium!.copyWith(
                     fontWeight: FontWeight.w600,
-                    color: Color(0xff02275A),
+                    color: Color(0xffEF5A6F),
                   ),
                 ),
               ],
@@ -534,23 +534,10 @@ class _HistoryViewState extends State<HistoryView> {
         width: double.infinity,
         margin: EdgeInsets.fromLTRB(24, 20, 24, 0),
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Image.asset(
-              Assets.icons.logo.path,
-              width: 32,
-              height: 32,
-              fit: BoxFit.cover,
-            ),
-            SizedBox(width: 13),
-            Expanded(
-              child: Text(
-                'CrediChain',
-                style: appTextTheme(context).bodyLarge!.copyWith(
-                  fontWeight: FontWeight.w400,
-                  color: Color(0xff02275A),
-                ),
-              ),
-            ),
+            Image.asset(Assets.icons.logo.path, width: 36, height: 36),
+
             Image.asset(
               Assets.icons.mail.path,
               width: 24,
@@ -575,7 +562,7 @@ class _HistoryViewState extends State<HistoryView> {
                 'Loan History',
                 style: appTextTheme(context).titleMedium!.copyWith(
                   fontWeight: FontWeight.w600,
-                  color: Color(0xff02275A),
+                  color: Color(0xffEF5A6F),
                 ),
               ),
               SizedBox(height: 30),
@@ -630,7 +617,7 @@ class _HistoryViewState extends State<HistoryView> {
                                   decoration: BoxDecoration(
                                     color:
                                         _selectedIndexLoanType == idx
-                                            ? Color(0xff005BA4)
+                                            ? Color(0xffEF5A6F)
                                             : Colors.transparent,
                                     borderRadius: BorderRadius.circular(10),
                                     boxShadow: getCustomBoxShadow(),

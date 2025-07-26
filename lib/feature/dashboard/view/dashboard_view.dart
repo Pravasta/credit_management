@@ -27,23 +27,9 @@ class _DashboardViewState extends State<DashboardView> {
         width: double.infinity,
         margin: EdgeInsets.fromLTRB(24, 20, 24, 0),
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Image.asset(
-              Assets.icons.logo.path,
-              width: 32,
-              height: 32,
-              fit: BoxFit.cover,
-            ),
-            SizedBox(width: 13),
-            Expanded(
-              child: Text(
-                'CrediChain',
-                style: appTextTheme(context).bodyLarge!.copyWith(
-                  fontWeight: FontWeight.w400,
-                  color: Color(0xff02275A),
-                ),
-              ),
-            ),
+            Image.asset(Assets.icons.logo.path, width: 36, height: 36),
             Image.asset(
               Assets.icons.mail.path,
               width: 24,
@@ -67,8 +53,8 @@ class _DashboardViewState extends State<DashboardView> {
             DefaultButton(
               title: 'Update Score',
               onTap: () {},
-              backgroundColor: Color(0xff005BA4),
-              borderColor: Color(0xff005BA4),
+              backgroundColor: Color(0xffEF5A6F),
+              borderColor: Color(0xffEF5A6F),
               titleColor: AppColor.white,
             ),
             SizedBox(height: 20),
@@ -241,7 +227,7 @@ class _DashboardViewState extends State<DashboardView> {
                             decoration: BoxDecoration(
                               color:
                                   _selected == index
-                                      ? Color(0xff005BA4)
+                                      ? Color(0xffEF5A6F)
                                       : Colors.transparent,
                               borderRadius: BorderRadius.circular(10),
                             ),
